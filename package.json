@@ -7,7 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "office-ui-fabric-core": "^10.1.0",
+    "@johannes-z/office-ui-fabric-vue": "^0.3.5",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"

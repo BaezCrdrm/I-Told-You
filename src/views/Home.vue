@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <MainITY />
+    <Generator />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import MainITY from '@/components/MainITY.vue'
+import Generator from '@/components/Generator.vue'
 
 export default {
   name: 'home',
   components: {
-    MainITY
+    Generator
   }
 }
 </script>

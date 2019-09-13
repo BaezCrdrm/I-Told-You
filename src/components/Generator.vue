@@ -9,17 +9,17 @@
                     <TextField label="Optional message" multiline rows="3" placeholder="Optional message to give a little more of context..." />
                     <TextField label="Standard" multiline rows={3} /> -->
 
-                    <input label="Title" v-model="message.main" placeholder="I told you..." @input="updateQuery" /><br>
-                    <input label="Complementary" v-model="message.comp" placeholder="Complementary information" @input="updateQuery" /><br>
-                    <input label="Optional message" v-model="message.msg" multiline rows="3" placeholder="Optional message to give a little more of context..." @input="updateQuery" /><br>
+                    <input label="Title" v-model="message.main" placeholder="I told you..." /><br>
+                    <input label="Complementary" v-model="message.comp" placeholder="Complementary information" /><br>
+                    <input label="Optional message" v-model="message.msg" multiline rows="3" placeholder="Optional message to give a little more of context..." /><br>
                     <!-- <input label="Standard" multiline rows={3} /> -->
+                    <button @click="updateQuery">Generate</button>
                     <p>{{ preview }}</p>
                 </div>
             </div>
 
             <div class="preview-content ms-Grid-col ms-sm12 ms-md6">
-                <iframe id="iframe-preview" :src="preview" />
-                <button @click="reloadPreview">Reload preview</button>
+                <MainITY :pmsg="objToString()" />
             </div>
         </div>
     </div>
@@ -27,6 +27,8 @@
 
 <script>
 import Fabric from '@johannes-z/office-ui-fabric-vue';
+import MainITY from '@/components/MainITY.vue'
+
 export default {
     name: 'Generator',
     data: () => {
@@ -44,7 +46,8 @@ export default {
         }
     },
     components: {
-        Fabric
+        Fabric,
+        MainITY
     },
     methods: {
         getQuery: function() {
@@ -53,10 +56,9 @@ export default {
         },
         updateQuery: function() {
             this.preview = window.location.href + "ity?q=" + this.getQuery();
-            document.getElementById('iframe-preview').contentWindow.location.reload(true);
         },
-        reloadPreview: function() {
-            document.getElementById('iframe-preview').contentWindow.location.reload(true);
+        objToString: function() {
+            return JSON.stringify(this.message);
         }
     }
 }

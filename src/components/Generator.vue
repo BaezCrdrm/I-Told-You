@@ -64,6 +64,7 @@ export default {
         copy: function(preview_url) {
             console.log("Custom I told you URL.");
             console.log(preview_url);
+            this.$clipboard(preview_url);
             alert("URL copied to clipboard");
         }
     }

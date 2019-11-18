@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.8dd14ba80585bef230be4f811d26a553.js"
+  "precache-manifest.d227754fae52fd10204b16beee2bf28e.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "i-told-you"});
